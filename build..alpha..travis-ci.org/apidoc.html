@@ -1,0 +1,2075 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >nuclide-server (v0.0.35)</a>
+</h1>
+<h4>Provides a collection of services that are run on the Nuclide server to support remote file editing</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server">module nuclide-server</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.</span>CounterService</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.</span>EchoService</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.</span>ErrorService</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.</span>FileSystemService</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.</span>InfoService</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.</span>NuclideSearchService</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.</span>SourceControlService</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.</span>service_manager</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server.CounterService">module nuclide-server.CounterService</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.CounterService.Counter">
+            function <span class="apidocSignatureSpan">nuclide-server.CounterService.</span>Counter
+            <span class="apidocSignatureSpan">(initialCount)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server.EchoService">module nuclide-server.EchoService</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoAny">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoAny
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoArrayOfArrayOfDate">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoArrayOfArrayOfDate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoBoolean">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoBoolean
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoBuffer">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoBuffer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoDate">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoDate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoMap">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoMap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoNuclideUri">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoNuclideUri
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoNumber">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoNumber
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoObject">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoObject
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoRegExp">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoRegExp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoSet">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoSet
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoString">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoTuple">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoTuple
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.EchoService.echoValueType">
+            function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoValueType
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server.ErrorService">module nuclide-server.ErrorService</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.ErrorService.observableError">
+            function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>observableError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.ErrorService.observableErrorCode">
+            function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>observableErrorCode
+            <span class="apidocSignatureSpan">(code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.ErrorService.observableErrorString">
+            function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>observableErrorString
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.ErrorService.observableErrorUndefined">
+            function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>observableErrorUndefined
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.ErrorService.promiseError">
+            function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>promiseError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.ErrorService.promiseErrorCode">
+            function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>promiseErrorCode
+            <span class="apidocSignatureSpan">(code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.ErrorService.promiseErrorString">
+            function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>promiseErrorString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.ErrorService.promiseErrorUndefined">
+            function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>promiseErrorUndefined
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server.FileSystemService">module nuclide-server.FileSystemService</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.copy">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>copy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.exists">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>exists
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.findNearestFile">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>findNearestFile
+            <span class="apidocSignatureSpan">(fileName, pathToDirectory)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.lstat">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>lstat
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.mkdir">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>mkdir
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.mkdirp">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>mkdirp
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.newFile">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>newFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.readFile">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>readFile
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.readdir">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>readdir
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.realpath">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>realpath
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.rename">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>rename
+            <span class="apidocSignatureSpan">(sourcePath, destinationPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.resolveRealPath">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>resolveRealPath
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.rmdir">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>rmdir
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.stat">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>stat
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.unlink">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>unlink
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.FileSystemService.writeFile">
+            function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>writeFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server.InfoService">module nuclide-server.InfoService</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.InfoService.getServerVersion">
+            function <span class="apidocSignatureSpan">nuclide-server.InfoService.</span>getServerVersion
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.InfoService.shutdownServer">
+            function <span class="apidocSignatureSpan">nuclide-server.InfoService.</span>shutdownServer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server.NuclideSearchService">module nuclide-server.NuclideSearchService</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.NuclideSearchService.addProvider">
+            function <span class="apidocSignatureSpan">nuclide-server.NuclideSearchService.</span>addProvider
+            <span class="apidocSignatureSpan">(name, provider)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.NuclideSearchService.clearProviders">
+            function <span class="apidocSignatureSpan">nuclide-server.NuclideSearchService.</span>clearProviders
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.NuclideSearchService.initialize">
+            function <span class="apidocSignatureSpan">nuclide-server.NuclideSearchService.</span>initialize
+            <span class="apidocSignatureSpan">(server)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.NuclideSearchService.shutdown">
+            function <span class="apidocSignatureSpan">nuclide-server.NuclideSearchService.</span>shutdown
+            <span class="apidocSignatureSpan">(server)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nuclide-server.NuclideSearchService.</span>services</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server.SourceControlService">module nuclide-server.SourceControlService</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.SourceControlService.getHgRepository">
+            function <span class="apidocSignatureSpan">nuclide-server.SourceControlService.</span>getHgRepository
+            <span class="apidocSignatureSpan">(directoryPath)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server.config">module nuclide-server.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.config.loadConfigsOfServiceWithServiceFramework">
+            function <span class="apidocSignatureSpan">nuclide-server.config.</span>loadConfigsOfServiceWithServiceFramework
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.config.loadConfigsOfServiceWithoutServiceFramework">
+            function <span class="apidocSignatureSpan">nuclide-server.config.</span>loadConfigsOfServiceWithoutServiceFramework
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nuclide-server.config.</span>SERVICE_FRAMEWORK_RPC_TIMEOUT_MS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nuclide-server.config.</span>HEARTBEAT_CHANNEL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nuclide-server.config.</span>SERVICE_FRAMEWORK3_CHANNEL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nuclide-server.config.</span>SERVICE_FRAMEWORK_EVENT_CHANNEL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nuclide-server.config.</span>SERVICE_FRAMEWORK_RPC_CHANNEL</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server.service_manager">module nuclide-server.service_manager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.service_manager.getRemoteEventName">
+            function <span class="apidocSignatureSpan">nuclide-server.service_manager.</span>getRemoteEventName
+            <span class="apidocSignatureSpan">(serviceName, eventMethodName, serviceOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.service_manager.getService">
+            function <span class="apidocSignatureSpan">nuclide-server.service_manager.</span>getService
+            <span class="apidocSignatureSpan">(serviceName, options, localImplementationClassPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.service_manager.optionsToString">
+            function <span class="apidocSignatureSpan">nuclide-server.service_manager.</span>optionsToString
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nuclide-server.utils">module nuclide-server.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.utils.asyncRequest">
+            function <span class="apidocSignatureSpan">nuclide-server.utils.</span>asyncRequest
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.utils.deserializeArgs">
+            function <span class="apidocSignatureSpan">nuclide-server.utils.</span>deserializeArgs
+            <span class="apidocSignatureSpan">(requestUrl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.utils.getQueryParameters">
+            function <span class="apidocSignatureSpan">nuclide-server.utils.</span>getQueryParameters
+            <span class="apidocSignatureSpan">(requestUrl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.utils.parseRequestBody">
+            function <span class="apidocSignatureSpan">nuclide-server.utils.</span>parseRequestBody
+            <span class="apidocSignatureSpan">(httpRequest, isJson)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.utils.sendJsonResponse">
+            function <span class="apidocSignatureSpan">nuclide-server.utils.</span>sendJsonResponse
+            <span class="apidocSignatureSpan">(response, json, statusCode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.utils.sendTextResponse">
+            function <span class="apidocSignatureSpan">nuclide-server.utils.</span>sendTextResponse
+            <span class="apidocSignatureSpan">(response, text, statusCode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nuclide-server.utils.serializeArgs">
+            function <span class="apidocSignatureSpan">nuclide-server.utils.</span>serializeArgs
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server" id="apidoc.module.nuclide-server">module nuclide-server</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server.CounterService" id="apidoc.module.nuclide-server.CounterService">module nuclide-server.CounterService</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.CounterService.Counter" id="apidoc.element.nuclide-server.CounterService.Counter">
+        function <span class="apidocSignatureSpan">nuclide-server.CounterService.</span>Counter
+        <span class="apidocSignatureSpan">(initialCount)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Counter(initialCount) {
+  _classCallCheck(this, Counter);
+
+  // Set initial count.
+  this._count = initialCount;
+  // Set the changes subscription observable.
+  this._changes = new _rx.Subject();
+
+  // Add this counter to global list.
+  counters.push(this);
+  // Broadcast that this counter was created.
+  newCounters.onNext(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server.EchoService" id="apidoc.module.nuclide-server.EchoService">module nuclide-server.EchoService</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoAny" id="apidoc.element.nuclide-server.EchoService.echoAny">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoAny
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoAny = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoArrayOfArrayOfDate" id="apidoc.element.nuclide-server.EchoService.echoArrayOfArrayOfDate">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoArrayOfArrayOfDate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoArrayOfArrayOfDate = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoBoolean" id="apidoc.element.nuclide-server.EchoService.echoBoolean">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoBoolean
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoBoolean = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoBuffer" id="apidoc.element.nuclide-server.EchoService.echoBuffer">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoBuffer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoBuffer = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoDate" id="apidoc.element.nuclide-server.EchoService.echoDate">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoDate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoDate = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoMap" id="apidoc.element.nuclide-server.EchoService.echoMap">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoMap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoMap = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoNuclideUri" id="apidoc.element.nuclide-server.EchoService.echoNuclideUri">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoNuclideUri
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoNuclideUri = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoNumber" id="apidoc.element.nuclide-server.EchoService.echoNumber">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoNumber
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoNumber = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoObject" id="apidoc.element.nuclide-server.EchoService.echoObject">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoObject
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoObject = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoRegExp" id="apidoc.element.nuclide-server.EchoService.echoRegExp">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoRegExp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoRegExp = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoSet" id="apidoc.element.nuclide-server.EchoService.echoSet">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoSet
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoSet = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoString" id="apidoc.element.nuclide-server.EchoService.echoString">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoString = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoTuple" id="apidoc.element.nuclide-server.EchoService.echoTuple">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoTuple
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoTuple = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.EchoService.echoValueType" id="apidoc.element.nuclide-server.EchoService.echoValueType">
+        function <span class="apidocSignatureSpan">nuclide-server.EchoService.</span>echoValueType
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">echoValueType = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server.ErrorService" id="apidoc.module.nuclide-server.ErrorService">module nuclide-server.ErrorService</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.ErrorService.observableError" id="apidoc.element.nuclide-server.ErrorService.observableError">
+        function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>observableError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function observableError(message) {
+  return createErrorObservable(new Error(message));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.ErrorService.observableErrorCode" id="apidoc.element.nuclide-server.ErrorService.observableErrorCode">
+        function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>observableErrorCode
+        <span class="apidocSignatureSpan">(code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function observableErrorCode(code) {
+  return createErrorObservable(createErrorCode(code));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.ErrorService.observableErrorString" id="apidoc.element.nuclide-server.ErrorService.observableErrorString">
+        function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>observableErrorString
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function observableErrorString(message) {
+  return createErrorObservable(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.ErrorService.observableErrorUndefined" id="apidoc.element.nuclide-server.ErrorService.observableErrorUndefined">
+        function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>observableErrorUndefined
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function observableErrorUndefined() {
+  return createErrorObservable(undefined);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.ErrorService.promiseError" id="apidoc.element.nuclide-server.ErrorService.promiseError">
+        function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>promiseError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">promiseError = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.ErrorService.promiseErrorCode" id="apidoc.element.nuclide-server.ErrorService.promiseErrorCode">
+        function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>promiseErrorCode
+        <span class="apidocSignatureSpan">(code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function promiseErrorCode(code) {
+  throw createErrorCode(code);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.ErrorService.promiseErrorString" id="apidoc.element.nuclide-server.ErrorService.promiseErrorString">
+        function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>promiseErrorString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">promiseErrorString = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.ErrorService.promiseErrorUndefined" id="apidoc.element.nuclide-server.ErrorService.promiseErrorUndefined">
+        function <span class="apidocSignatureSpan">nuclide-server.ErrorService.</span>promiseErrorUndefined
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function promiseErrorUndefined() {
+  throw undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server.FileSystemService" id="apidoc.module.nuclide-server.FileSystemService">module nuclide-server.FileSystemService</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.copy" id="apidoc.element.nuclide-server.FileSystemService.copy">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>copy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copy = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var copy = _asyncToGenerator(function* (sourcePath, destinationPath) {
+  var isExistingFile = yield fsPromise.exists(destinationPath);
+  if (isExistingFile) {
+    return false;
+  }
+  yield new Promise(function (resolve, reject) {
+    var fsPlus = require(&#x27;fs-plus&#x27;);
+    fsPlus.<span class="apidocCodeKeywordSpan">copy</span>(sourcePath, destinationPath, function (error) {
+      error ? reject(error) : resolve();
+    });
+  });
+  return true;
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.exists" id="apidoc.element.nuclide-server.FileSystemService.exists">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>exists
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function exists(path) {
+  return fsPromise.exists(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * directories (if necessary) and then writes an empty file at the specified
+ * path.
+ *
+ * @return A boolean indicating whether the file was created.
+ */
+
+var newFile = _asyncToGenerator(function* (filePath) {
+  var isExistingFile = yield fsPromise.<span class="apidocCodeKeywordSpan">exists</span>(filePath);
+  if (isExistingFile) {
+    return false;
+  }
+  yield fsPromise.mkdirp(pathUtil.dirname(filePath));
+  yield fsPromise.writeFile(filePath, &#x27;&#x27;);
+  return true;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.findNearestFile" id="apidoc.element.nuclide-server.FileSystemService.findNearestFile">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>findNearestFile
+        <span class="apidocSignatureSpan">(fileName, pathToDirectory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function findNearestFile(fileName, pathToDirectory) {
+  return fsPromise.findNearestFile(fileName, pathToDirectory);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var fsPromise = _require.fsPromise;
+
+function exists(path) {
+ return fsPromise.exists(path);
+}
+
+function findNearestFile(fileName, pathToDirectory) {
+ return fsPromise.<span class="apidocCodeKeywordSpan">findNearestFile</span>(fileName, pathToDirectory);
+}
+
+/**
+* The lstat endpoint is the same as the stat endpoint except it will return
+* the stat of a link instead of the file the link points to.
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.lstat" id="apidoc.element.nuclide-server.FileSystemService.lstat">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>lstat
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lstat(path) {
+  return fsPromise.lstat(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+exports.newFile = newFile;
+
+var readdir = _asyncToGenerator(function* (path) {
+var files = yield fsPromise.readdir(path);
+var entries = yield Promise.all(files.map(_asyncToGenerator(function* (file) {
+  var fullpath = pathUtil.join(path, file);
+  var lstats = yield fsPromise.<span class="apidocCodeKeywordSpan">lstat</span>(fullpath);
+  if (!lstats.isSymbolicLink()) {
+    return { file: file, stats: lstats, isSymbolicLink: false };
+  } else {
+    try {
+      var stats = yield fsPromise.stat(fullpath);
+      return { file: file, stats: stats, isSymbolicLink: true };
+    } catch (error) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.mkdir" id="apidoc.element.nuclide-server.FileSystemService.mkdir">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>mkdir
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mkdir(path) {
+  return fsPromise.mkdir(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Creates a new directory with the given path.
+* Throws EEXIST error if the directory already exists.
+* Throws ENOENT if the path given is nested in a non-existing directory.
+*/
+
+function mkdir(path) {
+ return fsPromise.<span class="apidocCodeKeywordSpan">mkdir</span>(path);
+}
+
+/**
+* Runs the equivalent of `mkdir -p` with the given path.
+*
+* Like most implementations of mkdirp, if it fails, it is possible that
+* directories were created for some prefix of the given path.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.mkdirp" id="apidoc.element.nuclide-server.FileSystemService.mkdirp">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>mkdirp
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mkdirp(path) {
+  return fsPromise.mkdirp(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+
+var newFile = _asyncToGenerator(function* (filePath) {
+ var isExistingFile = yield fsPromise.exists(filePath);
+ if (isExistingFile) {
+   return false;
+ }
+ yield fsPromise.<span class="apidocCodeKeywordSpan">mkdirp</span>(pathUtil.dirname(filePath));
+ yield fsPromise.writeFile(filePath, &#x27;&#x27;);
+ return true;
+}
+
+/**
+* The readdir endpoint accepts the following query parameters:
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.newFile" id="apidoc.element.nuclide-server.FileSystemService.newFile">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>newFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">newFile = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.readFile" id="apidoc.element.nuclide-server.FileSystemService.readFile">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>readFile
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readFile(path, options) {
+  return fsPromise.readFile(path, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *      Note that options does NOT include &#x27;encoding&#x27; this ensures that the return value
+ *      is always a Buffer and never a string.
+ *
+ *   Callers who want a string should call buffer.toString(&#x27;utf8&#x27;).
+ */
+
+function readFile(path, options) {
+return fsPromise.<span class="apidocCodeKeywordSpan">readFile</span>(path, options);
+}
+
+// TODO: Move to nuclide-commons
+function mvPromise(sourcePath, destinationPath) {
+return new Promise(function (resolve, reject) {
+  mv(sourcePath, destinationPath, { mkdirp: false }, function (error) {
+    if (error) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.readdir" id="apidoc.element.nuclide-server.FileSystemService.readdir">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>readdir
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readdir = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * isSymbolicLink: true if the entry is a symlink to another filesystem location.
+ */
+);
+
+exports.newFile = newFile;
+
+var readdir = _asyncToGenerator(function* (path) {
+var files = yield fsPromise.<span class="apidocCodeKeywordSpan">readdir</span>(path);
+var entries = yield Promise.all(files.map(_asyncToGenerator(function* (file) {
+  var fullpath = pathUtil.join(path, file);
+  var lstats = yield fsPromise.lstat(fullpath);
+  if (!lstats.isSymbolicLink()) {
+    return { file: file, stats: lstats, isSymbolicLink: false };
+  } else {
+    try {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.realpath" id="apidoc.element.nuclide-server.FileSystemService.realpath">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>realpath
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function realpath(path) {
+  return fsPromise.realpath(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+
+function mkdirp(path) {
+  return fsPromise.mkdirp(path);
+}
+
+function realpath(path) {
+  return fsPromise.<span class="apidocCodeKeywordSpan">realpath</span>(path);
+}
+
+function resolveRealPath(path) {
+  return fsPromise.realpath(fsPromise.expandHomeDir(path));
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.rename" id="apidoc.element.nuclide-server.FileSystemService.rename">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>rename
+        <span class="apidocSignatureSpan">(sourcePath, destinationPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rename(sourcePath, destinationPath) {
+  return new Promise(function (resolve, reject) {
+    var fsPlus = require(&#x27;fs-plus&#x27;);
+    fsPlus.move(sourcePath, destinationPath, function (error) {
+      error ? reject(error) : resolve();
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.resolveRealPath" id="apidoc.element.nuclide-server.FileSystemService.resolveRealPath">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>resolveRealPath
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveRealPath(path) {
+  return fsPromise.realpath(fsPromise.expandHomeDir(path));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.rmdir" id="apidoc.element.nuclide-server.FileSystemService.rmdir">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>rmdir
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rmdir(path) {
+  return fsPromise.rmdir(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   fsPlus.move(sourcePath, destinationPath, function (error) {
+     error ? reject(error) : resolve();
+   });
+ });
+}
+
+function rmdir(path) {
+ return fsPromise.<span class="apidocCodeKeywordSpan">rmdir</span>(path);
+}
+
+/**
+* The stat endpoint accepts the following query parameters:
+*
+*   path: path to the file to read
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.stat" id="apidoc.element.nuclide-server.FileSystemService.stat">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>stat
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stat(path) {
+  return fsPromise.stat(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var entries = yield Promise.all(files.map(_asyncToGenerator(function* (file) {
+  var fullpath = pathUtil.join(path, file);
+  var lstats = yield fsPromise.lstat(fullpath);
+  if (!lstats.isSymbolicLink()) {
+    return { file: file, stats: lstats, isSymbolicLink: false };
+  } else {
+    try {
+      var stats = yield fsPromise.<span class="apidocCodeKeywordSpan">stat</span>(fullpath);
+      return { file: file, stats: stats, isSymbolicLink: true };
+    } catch (error) {
+      return { file: file, stats: undefined, isSymbolicLink: true, error: error };
+    }
+  }
+})));
+// TODO: Return entries directly and change client to handle error.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.unlink" id="apidoc.element.nuclide-server.FileSystemService.unlink">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>unlink
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unlink(path) {
+  return fsPromise.unlink(path)[&#x27;catch&#x27;](function (error) {
+    if (error.code !== &#x27;ENOENT&#x27;) {
+      throw error;
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    // TODO(mikeo): put renames into a queue so we don&#x27;t write older save over new save.
+    // Use mv as fs.rename doesn&#x27;t work across partitions.
+    yield mvPromise(tempFilePath, path);
+    complete = true;
+  } finally {
+    if (!complete) {
+      yield fsPromise.<span class="apidocCodeKeywordSpan">unlink</span>(tempFilePath);
+    }
+  }
+});
+
+exports.writeFile = writeFile;
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve,
+reject) { var callNext = step.bind(null, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key
+, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve
+(value); } else { Promise.resolve(value).then(callNext, callThrow); } } callNext(); }); }; }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.FileSystemService.writeFile" id="apidoc.element.nuclide-server.FileSystemService.writeFile">
+        function <span class="apidocSignatureSpan">nuclide-server.FileSystemService.</span>writeFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFile = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var newFile = _asyncToGenerator(function* (filePath) {
+ var isExistingFile = yield fsPromise.exists(filePath);
+ if (isExistingFile) {
+   return false;
+ }
+ yield fsPromise.mkdirp(pathUtil.dirname(filePath));
+ yield fsPromise.<span class="apidocCodeKeywordSpan">writeFile</span>(filePath, &#x27;&#x27;);
+ return true;
+}
+
+/**
+* The readdir endpoint accepts the following query parameters:
+*
+*   path: path to the folder to list entries inside.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server.InfoService" id="apidoc.module.nuclide-server.InfoService">module nuclide-server.InfoService</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.InfoService.getServerVersion" id="apidoc.element.nuclide-server.InfoService.getServerVersion">
+        function <span class="apidocSignatureSpan">nuclide-server.InfoService.</span>getServerVersion
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getServerVersion = function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { var callNext = step.bind(null
+, &#x27;next&#x27;); var callThrow = step.bind(null, &#x27;throw&#x27;); function step(key, arg) { try { var info = gen[key](arg); var value = info.
+value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(callNext
+, callThrow); } } callNext(); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.InfoService.shutdownServer" id="apidoc.element.nuclide-server.InfoService.shutdownServer">
+        function <span class="apidocSignatureSpan">nuclide-server.InfoService.</span>shutdownServer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shutdownServer() {
+  _NuclideServer2[&#x27;default&#x27;].shutdown();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server.NuclideSearchService" id="apidoc.module.nuclide-server.NuclideSearchService">module nuclide-server.NuclideSearchService</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.NuclideSearchService.addProvider" id="apidoc.element.nuclide-server.NuclideSearchService.addProvider">
+        function <span class="apidocSignatureSpan">nuclide-server.NuclideSearchService.</span>addProvider
+        <span class="apidocSignatureSpan">(name, provider)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addProvider(name, provider) {
+  providers = providers || {};
+  if (providers[name]) {
+    throw new Error(name + &#x27; has already been added as a provider.&#x27;);
+  }
+  providers[name] = provider;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.NuclideSearchService.clearProviders" id="apidoc.element.nuclide-server.NuclideSearchService.clearProviders">
+        function <span class="apidocSignatureSpan">nuclide-server.NuclideSearchService.</span>clearProviders
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clearProviders() {
+  providers = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.NuclideSearchService.initialize" id="apidoc.element.nuclide-server.NuclideSearchService.initialize">
+        function <span class="apidocSignatureSpan">nuclide-server.NuclideSearchService.</span>initialize
+        <span class="apidocSignatureSpan">(server)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function initialize(server) {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.NuclideSearchService.shutdown" id="apidoc.element.nuclide-server.NuclideSearchService.shutdown">
+        function <span class="apidocSignatureSpan">nuclide-server.NuclideSearchService.</span>shutdown
+        <span class="apidocSignatureSpan">(server)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shutdown(server) {
+  clearProviders();
+  for (var k in fileSearchers) {
+    fileSearchers[k].dispose();
+  }
+  fileSearchers = Object.create(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _NuclideServer = require(&#x27;../NuclideServer&#x27;);
+
+var _NuclideServer2 = _interopRequireDefault(_NuclideServer);
+
+&#x27;use babel&#x27;;
+
+function shutdownServer() {
+  _NuclideServer2[&#x27;default&#x27;].<span class="apidocCodeKeywordSpan">shutdown</span>();
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvZm9sZGVycy94Zi9yc3BoNF9jNTczMTVyczU3eHhzZHNrcnhudjM2dDAvVC90bXBwZmw1Mm5wdWJsaXNoX3BhY2thZ2VzL25wbS9udWNsaWRlLXNlcnZlci9saWIvc2VydmljZXMvSW5mb1NlcnZpY2UuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztJQWNzQixnQkFBZ0IscUJBQS9CLGFBQW1EO0FBQ3hELFNBQU8sb0JBSkQsVUFBVSxHQUlHLENBQUM7Q0FDckI7Ozs7Ozs7Ozs7Ozs7Ozs7OzhCQUx3QixpQkFBaUI7OzZCQUNoQixrQkFBa0I7Ozs7QUFaNUMsV0FBVyxDQUFDOztBQWtCTCxTQUFTLGNBQWMsR0FBUztBQUNyQyw2QkFBYyxRQUFRLEVBQUUsQ0FBQztDQUMxQiIsImZpbGUiOiIvdmFyL2ZvbGRlcnMveGYvcnNwaDRfYzU3MzE1cnM1N3h4c2Rza3J4bnYzNnQwL1QvdG1wcGZsNTJucHVibGlzaF9wYWNrYWdlcy9ucG0vbnVjbGlkZS1zZXJ2ZXIvbGliL3NlcnZpY2VzL0luZm9TZXJ2aWNlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBiYWJlbCc7XG4vKiBAZmxvdyAqL1xuXG4vKlxuICogQ29weXJpZ2h0IChjKSAyMDE1LXByZXNlbnQsIEZhY2Vib29rLCBJbmMuXG4gKiBBbGwgcmlnaHRzIHJlc2VydmVkLlxuICpcbiAqIFRoaXMgc291cmNlIGNvZGUgaXMgbGljZW5zZWQgdW5kZXIgdGhlIGxpY2Vuc2UgZm91bmQgaW4gdGhlIExJQ0VOU0UgZmlsZSBpblxuICogdGhlIHJvb3QgZGlyZWN0b3J5IG9mIHRoaXMgc291cmNlIHRyZWUuXG4gKi9cblxuaW1wb3J0IHtnZXRWZXJzaW9ufSBmcm9tICdudWNsaWRlLXZlcnNpb24nO1xuaW1wb3J0IE51Y2xpZGVTZXJ2ZXIgZnJvbSAnLi4vTnVjbGlkZVNlcnZlcic7XG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBnZXRTZXJ2ZXJWZXJzaW9uKCk6IFByb21pc2U8c3RyaW5nPiB7XG4gIHJldHVybiBnZXRWZXJzaW9uKCk7XG59XG5cbmV4cG9ydCBmdW5jdGlvbiBzaHV0ZG93blNlcnZlcigpOiB2b2lkIHtcbiAgTnVjbGlkZVNlcnZlci5zaHV0ZG93bigpO1xufVxuIl19
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server.SourceControlService" id="apidoc.module.nuclide-server.SourceControlService">module nuclide-server.SourceControlService</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.SourceControlService.getHgRepository" id="apidoc.element.nuclide-server.SourceControlService.getHgRepository">
+        function <span class="apidocSignatureSpan">nuclide-server.SourceControlService.</span>getHgRepository
+        <span class="apidocSignatureSpan">(directoryPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getHgRepository(directoryPath) {
+  var _require = require(&#x27;nuclide-source-control-helpers&#x27;);
+
+  var findHgRepository = _require.findHgRepository;
+
+  return Promise.resolve(findHgRepository(directoryPath));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server.config" id="apidoc.module.nuclide-server.config">module nuclide-server.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.config.loadConfigsOfServiceWithServiceFramework" id="apidoc.element.nuclide-server.config.loadConfigsOfServiceWithServiceFramework">
+        function <span class="apidocSignatureSpan">nuclide-server.config.</span>loadConfigsOfServiceWithServiceFramework
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadConfigsOfServiceWithServiceFramework() {
+  return loadConfigs().filter(function (config) {
+    return config.useServiceFramework;
+  }).map(function (config) {
+    return {
+      name: config.name,
+      definition: _resolveServiceConfigPath(config.definition),
+      implementation: _resolveServiceConfigPath(config.implementation)
+    };
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.config.loadConfigsOfServiceWithoutServiceFramework" id="apidoc.element.nuclide-server.config.loadConfigsOfServiceWithoutServiceFramework">
+        function <span class="apidocSignatureSpan">nuclide-server.config.</span>loadConfigsOfServiceWithoutServiceFramework
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadConfigsOfServiceWithoutServiceFramework() {
+  return loadConfigs().filter(function (config) {
+    return !config.useServiceFramework;
+  }).map(function (config) {
+    return _resolveServiceConfigPath(config.path);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server.service_manager" id="apidoc.module.nuclide-server.service_manager">module nuclide-server.service_manager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.service_manager.getRemoteEventName" id="apidoc.element.nuclide-server.service_manager.getRemoteEventName">
+        function <span class="apidocSignatureSpan">nuclide-server.service_manager.</span>getRemoteEventName
+        <span class="apidocSignatureSpan">(serviceName, eventMethodName, serviceOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getRemoteEventName(serviceName, eventMethodName, serviceOptions) {
+  return getLocalEventName(serviceName, eventMethodName) + &#x27;@&#x27; + optionsToString(serviceOptions);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.service_manager.getService" id="apidoc.element.nuclide-server.service_manager.getService">
+        function <span class="apidocSignatureSpan">nuclide-server.service_manager.</span>getService
+        <span class="apidocSignatureSpan">(serviceName, options, localImplementationClassPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getService(serviceName, options, localImplementationClassPath) {
+  var key = serviceName + &#x27;@&#x27; + optionsToString(options);
+  if (!cachedServices.has(key)) {
+    logger.debug(&#x27;Create service instance: &#x27; + key);
+    var serviceInstance = createLocalService(serviceName, localImplementationClassPath, options);
+    cachedServices.set(key, serviceInstance);
+  }
+  return cachedServices.get(key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.service_manager.optionsToString" id="apidoc.element.nuclide-server.service_manager.optionsToString">
+        function <span class="apidocSignatureSpan">nuclide-server.service_manager.</span>optionsToString
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function optionsToString(options) {
+  if (!options) {
+    return &#x27;&#x27;;
+  } else if (options instanceof Array) {
+    return &#x27;[&#x27; + options.map(function (item) {
+      return optionsToString(item);
+    }).join(&#x27;, &#x27;) + &#x27;]&#x27;;
+  } else if (options instanceof Object) {
+    var keys = Object.keys(options).sort();
+    return &#x27;{&#x27; + keys.map(function (key) {
+      return key + &#x27;: &#x27; + optionsToString(options[key]);
+    }).join(&#x27;, &#x27;) + &#x27;}&#x27;;
+  } else if (typeof options === &#x27;number&#x27; || typeof options === &#x27;boolean&#x27; || typeof options === &#x27;string&#x27;) {
+    return JSON.stringify(options);
+  } else {
+    throw Error(&#x27;Can\&#x27;t stringify %o&#x27;, options);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nuclide-server.utils" id="apidoc.module.nuclide-server.utils">module nuclide-server.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.utils.asyncRequest" id="apidoc.element.nuclide-server.utils.asyncRequest">
+        function <span class="apidocSignatureSpan">nuclide-server.utils.</span>asyncRequest
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function asyncRequest(options) {
+  return new Promise(function (resolve, reject) {
+    if (options.useQuerystring === undefined) {
+      options.useQuerystring = true;
+    }
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else if (response.statusCode &#x3c; 200 || response.statusCode &#x3e;= 300) {
+        var errorJson = body;
+        if (typeof body !== &#x27;object&#x27;) {
+          try {
+            errorJson = JSON.parse(body);
+          } catch (err) {
+            // 404 responses aren&#x27;t currently JSON.
+            errorJson = { message: body };
+          }
+        }
+        var err = new Error(errorJson.message);
+        // Success http status codes range from 200 to 299.
+        err.code = errorJson.code || response.statusCode;
+        reject(err);
+      } else {
+        resolve({ body: body, response: response });
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.utils.deserializeArgs" id="apidoc.element.nuclide-server.utils.deserializeArgs">
+        function <span class="apidocSignatureSpan">nuclide-server.utils.</span>deserializeArgs
+        <span class="apidocSignatureSpan">(requestUrl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deserializeArgs(requestUrl) {
+  var _getQueryParameters = getQueryParameters(requestUrl);
+
+  var args = _getQueryParameters.args;
+  var argTypes = _getQueryParameters.argTypes;
+
+  args = args || [];
+  argTypes = argTypes || [];
+  var argsArray = Array.isArray(args) ? args : [args];
+  var argTypesArray = Array.isArray(argTypes) ? argTypes : [argTypes];
+  return argsArray.map(function (arg, i) {
+    // I do this because nulls are normally sent as empty strings.
+    if (argTypesArray[i] === &#x27;undefined&#x27;) {
+      return undefined;
+    } else if (argTypesArray[i] === &#x27;string&#x27;) {
+      return arg;
+    } else {
+      // some methods have options object arguments.
+      return JSON.parse(arg);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.utils.getQueryParameters" id="apidoc.element.nuclide-server.utils.getQueryParameters">
+        function <span class="apidocSignatureSpan">nuclide-server.utils.</span>getQueryParameters
+        <span class="apidocSignatureSpan">(requestUrl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getQueryParameters(requestUrl) {
+  var _url$parse = url.parse(requestUrl, true);
+
+  var query = _url$parse.query;
+
+  return query;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.utils.parseRequestBody" id="apidoc.element.nuclide-server.utils.parseRequestBody">
+        function <span class="apidocSignatureSpan">nuclide-server.utils.</span>parseRequestBody
+        <span class="apidocSignatureSpan">(httpRequest, isJson)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseRequestBody(httpRequest, isJson) {
+  return new Promise(function (resolve, reject) {
+    var body = &#x27;&#x27;;
+    httpRequest.on(&#x27;data&#x27;, function (data) {
+      body += data;
+      // too much POST data, kill the connection!
+      if (body.length &#x3e; MAX_REQUEST_LENGTH) {
+        reject(new Error(&#x27;body is too big&#x27;));
+        httpRequest.connection.destroy();
+      }
+    });
+    httpRequest.on(&#x27;end&#x27;, function () {
+      return resolve(isJson ? JSON.parse(body) : body);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.utils.sendJsonResponse" id="apidoc.element.nuclide-server.utils.sendJsonResponse">
+        function <span class="apidocSignatureSpan">nuclide-server.utils.</span>sendJsonResponse
+        <span class="apidocSignatureSpan">(response, json, statusCode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sendJsonResponse(response, json, statusCode) {
+  response.setHeader(&#x27;Content-Type&#x27;, &#x27;application/json&#x27;);
+  sendTextResponse(response, JSON.stringify(json), statusCode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.utils.sendTextResponse" id="apidoc.element.nuclide-server.utils.sendTextResponse">
+        function <span class="apidocSignatureSpan">nuclide-server.utils.</span>sendTextResponse
+        <span class="apidocSignatureSpan">(response, text, statusCode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sendTextResponse(response, text, statusCode) {
+  if (typeof statusCode === &#x27;number&#x27;) {
+    response.statusCode = statusCode;
+  }
+  response.write(text || &#x27;&#x27;);
+  response.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nuclide-server.utils.serializeArgs" id="apidoc.element.nuclide-server.utils.serializeArgs">
+        function <span class="apidocSignatureSpan">nuclide-server.utils.</span>serializeArgs
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function serializeArgs(args) {
+  var argsOnHttp = [];
+  var argTypes = [];
+  args.forEach(function (arg) {
+    // I do this because nulls are normally sent as empty strings
+    if (arg === undefined) {
+      argsOnHttp.push(&#x27;&#x27;);
+      argTypes.push(&#x27;undefined&#x27;);
+    } else if (typeof arg === &#x27;string&#x27;) {
+      argsOnHttp.push(arg);
+      argTypes.push(&#x27;string&#x27;);
+    } else {
+      // object, number, boolean null
+      argsOnHttp.push(JSON.stringify(arg));
+      argTypes.push(&#x27;object&#x27;);
+    }
+  });
+  return {
+    args: argsOnHttp,
+    argTypes: argTypes
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
